@@ -6,7 +6,7 @@ public class App {
         list.add(30);
 
         list.display();
-        list.delete(0);
+        list.delete(-1);
         list.display();
     }
 }

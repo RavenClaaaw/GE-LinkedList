@@ -15,8 +15,7 @@ public class LinkedList<T>{
 
     public void insertAt(int index, T value){
         Node<T> node = new Node<>(value);
-
-        // 0 For
+        
         if(index == -1) index = this.size();
         if(index < 0 || index > this.size()){
             System.out.println("ERROR POSITION");
@@ -31,7 +30,7 @@ public class LinkedList<T>{
     }
 
     public void delete(int index){
-        if(index == -1) index = this.size();
+        if(index == -1) index = this.size() - 1;
         if(index < 0 || index > this.size()){
             System.out.println("ERROR POSITION");
             return;
