@@ -6,7 +6,6 @@ public class App {
         list.add(30);
 
         list.display();
-        list.delete(-1);
-        list.display();
+        System.out.println("\nFind 30:- " + list.search(30));
     }
 }
