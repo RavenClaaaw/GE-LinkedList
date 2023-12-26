@@ -41,6 +41,20 @@ public class LinkedList<T>{
         current.next = current.next.next;
     }
 
+    public int search(T value){
+        int index = -1;
+        
+        Node<T> current = head;
+        while(current != null){
+            if(current.value == value) return index;
+
+            current = current.next; 
+            index += 1; 
+        }
+
+        return -1;
+    }
+
     public void display(){
         Node<T> current = head.next;
         System.out.println("\nLINKED LIST:- ");
