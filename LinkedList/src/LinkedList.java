@@ -30,6 +30,18 @@ public class LinkedList<T>{
         current.next = node;
     }
 
+    public void delete(int index){
+        if(index == -1) index = this.size();
+        if(index < 0 || index > this.size()){
+            System.out.println("ERROR POSITION");
+            return;
+        }
+
+        Node<T> current = head;
+        for(int i=0; i<index; i++) current = current.next;
+        current.next = current.next.next;
+    }
+
     public void display(){
         Node<T> current = head.next;
         System.out.println("\nLINKED LIST:- ");
