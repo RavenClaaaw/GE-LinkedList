@@ -13,11 +13,41 @@ public class LinkedList<T>{
         current.next = node;
     }
 
+    public void insertAt(int index, T value){
+        Node<T> node = new Node<>(value);
+
+        // 0 For
+        if(index == -1) index = this.size();
+        if(index < 0 || index > this.size()){
+            System.out.println("ERROR POSITION");
+            return;
+        }
+
+        Node<T> current = head;
+        for(int i=0; i<index; i++) current = current.next;
+        
+        node.next = current.next;
+        current.next = node;
+    }
+
     public void display(){
         Node<T> current = head.next;
+        System.out.println("\nLINKED LIST:- ");
         while(current != null){
             System.out.print(current.value + " "); 
             current = current.next; 
         }
+    }
+
+    public int size(){
+        int size = 0;
+
+        Node<T> current = head.next;
+        while(current != null){
+            size += 1;
+            current = current.next; 
+        }
+
+        return size;
     }
 }
